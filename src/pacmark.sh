@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ~/.local/lib/pacmark/utils.sh 
+SHRDIR=$(dirname $BASH_SOURCE)/../share/pacmark
+source $SHRDIR/utils.sh
 
 function show_help {
   echo "Usage: pacmark [command] [args]"
@@ -25,7 +26,7 @@ shift
 
 case $command in
   clean)
-    source ~/.local/lib/pacmark/clean.sh
+    source $SHRDIR/clean.sh
     clean
     ;;
   diff)
@@ -36,7 +37,7 @@ case $command in
         echo "Error: No packages specified to mark."
         exit 1
     fi
-    source ~/.local/lib/pacmark/mark.sh
+    source $SHRDIR/mark.sh
     mark $@
     ;;
   unmark)
@@ -53,11 +54,11 @@ case $command in
       echo "Error: No package specified to check status."
       exit 1
     fi
-    source ~/.local/lib/pacmark/status.sh
+    source $SHRDIR/status.sh
     status $@
     ;;
   generate)
-    source ~/.local/lib/pacmark/generate.sh
+    source $SHRDIR/generate.sh
     generate
     ;;
   list)

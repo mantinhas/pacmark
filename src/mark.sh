@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source ~/.local/lib/pacmark/utils.sh
+SHRDIR=$(dirname $BASH_SOURCE)
+source $SHRDIR/utils.sh
 
 function mark {
   ADDED_MESSAGE="$USER - $(date)"

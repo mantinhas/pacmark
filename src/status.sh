@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source ~/.local/lib/pacmark/utils.sh
+
+SHRDIR=$(dirname $BASH_SOURCE)
+source $SHRDIR/utils.sh
 
 function status_aux {
   # Is marked
