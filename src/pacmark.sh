@@ -10,6 +10,7 @@ function show_help {
   echo "  diff                  Show diff between declared state and actual state"
   echo "  generate              Generate a new packages.list file"
   echo "  list                  List all marked (declared) packages"
+  echo "  edit                  Edit the packages.list file"
   echo "  status pkg1 pkg2 ...  Show the status of a package (marked, installed, or both)"
   echo "  mark pkg1 pkg2 ...    Mark the specified packages as permanent"
   echo "  unmark pkg1 pkg2 ...  [WIP] Unmark the specified packages, making them removable"
@@ -63,6 +64,9 @@ case $command in
     ;;
   list)
     clean_pkg_file $KEEPLISTFILE
+    ;;
+  edit)
+    $EDITOR $KEEPLISTFILE
     ;;
   --help|-h)
     show_help
