@@ -20,10 +20,10 @@ install:
 	@echo "Generating packages.list ..."
 	bash $(DESTDIR)$(BINDIR)/pacmark generate
 	@echo "Generating packages.list finished."
-	@echo "Done!"
+	@echo "Done."
 
 uninstall:
 	@echo "Uninstalling pacmark..."
 	$(SUDO) rm -f $(DESTDIR)$(BINDIR)/pacmark
 	$(SUDO) rm -rf $(DESTDIR)$(SHRDIR)/pacmark
-	@echo "Done!"
+	@echo "Done."
